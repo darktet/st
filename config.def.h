@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMono Nerd Font :pixelsize=15:antialias=true:autohint=true";
-static char *font2[] = { "JetBrainsMono Nerd Font :pixelsize=15:antialias=true:autohint=true" };
+static char *font = "FiraCode Nerd Font:pixelsize=13:antialias=true:autohint=false";
+static char *font2[] = { "JoyPixels:pixelsize=10:antialias=true:autohint=false" };
 static int borderpx = 0;
 
 /*
@@ -111,37 +111,41 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 8;
+unsigned int tabspaces = 4;
 
 /* bg opacity */
-float alpha = 1.0;
+float alpha = 0.7;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-  "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
-  "#cc241d",
-  "#98971a",
-  "#d79921",
-  "#458588",
-  "#b16286",
-  "#689d6a",
-  "#a89984",
-  "#928374",
-  "#fb4934",
-  "#b8bb26",
-  "#fabd2f",
-  "#83a598",
-  "#d3869b",
-  "#8ec07c",
-  "#ebdbb2",
+  /* 8 normal colors */
+  "#1f1f1f", // black   0
+  "#f81118", // red  1
+  "#55ff55", // green  2
+  "#fded02", // yellow  3
+  "#2a84d2", // blue  4
+  "#4e5ab7", // magenta  5
+  "#1081d6", // cyan  6
+  "#d6dbe5", // gray   7
+
+  /* 8 bright colors */
+  "#d6dbe5", // gray    8
+  "#de352e", // red     9
+  "#1dd361", // green   10
+  "#f3bd09", // yellow  11
+  "#1081d6", // blue    12
+  "#5350b9", // magenta 13
+  "#0f7ddb", // cyan    14
+  "#ffffff", // white   15
+
   [255] = 0,
+
   /* more colors can be added after 255 to use with DefaultXX */
-  "#add8e6", /* 256 -> cursor */
-  "#555555", /* 257 -> rev cursor*/
-  "#282828", /* 258 -> bg */
+  "#a49ed6", // 256
+  "#2d2b3a", // 257
+  "#000000", /* 258 -> bg */
   "#ffffff", /* 259 -> fg */
 };
-
 
 /*
  * Default colors (colorname index)
@@ -159,7 +163,7 @@ unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 4;
 
 /*
  * Default columns and rows numbers
